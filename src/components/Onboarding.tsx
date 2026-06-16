@@ -89,7 +89,7 @@ export default function Onboarding() {
           <LogoMark />
         </div>
         <h1 className="text-2xl font-bold tracking-tight text-ink-50">
-          Trendweight
+          Supercomp
         </h1>
         <p className="mt-1 text-sm text-ink-400">
           Track your weight, see the real trend, reach your goal.

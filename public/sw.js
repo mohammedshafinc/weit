@@ -1,6 +1,6 @@
 // Minimal offline-first service worker.
 // Network-first for navigation (so updates land), cache-first for assets.
-const CACHE = 'trendweight-v1'
+const CACHE = 'supercomp-v1'
 const PRECACHE = ['/', '/index.html', '/manifest.webmanifest', '/favicon.svg', '/icon.svg']
 
 self.addEventListener('install', (event) => {

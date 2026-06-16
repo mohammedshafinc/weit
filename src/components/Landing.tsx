@@ -558,7 +558,7 @@ const FAQ_ITEMS = [
   { q: 'Can I use it on my phone?', a: 'Yes. Supercomp is an AI-powered Progressive Web App. Open it in Chrome or Safari, tap "Add to Home Screen", and it installs like a native app. The AI runs fully offline via a service worker.' },
   { q: 'Can I switch between kg and lb?', a: 'Yes, at any time in Settings. All weights are stored internally in kg so the AI models always work in a canonical unit — switching back and forth never degrades data or projections.' },
   { q: 'How do I back up my data?', a: 'Settings → Your data → Export JSON backup. Import it on any device to restore your full AI analytics history. CSV export is also available for spreadsheets.' },
-  { q: 'Does it track calories or food?', a: 'Not directly. Trendweight\'s AI focuses on weight trend analysis. The AI calorie engine estimates your TDEE so you know your calorie target, but food logging lives in a separate app.' },
+  { q: 'Does it track calories or food?', a: 'Not directly. Supercomp\'s AI focuses on weight trend analysis. The AI calorie engine estimates your TDEE so you know your calorie target, but food logging lives in a separate app.' },
 ]
 
 function FAQ() {
@@ -638,7 +638,7 @@ function LandingFooter() {
               <TrendIcon size={16} />
             </div>
             <div>
-              <div className="text-sm font-bold text-ink-100">Trendweight</div>
+              <div className="text-sm font-bold text-ink-100">Supercomp</div>
               <div className="text-xs text-ink-600">AI-native private weight tracker</div>
             </div>
           </div>

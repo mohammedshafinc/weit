@@ -62,7 +62,7 @@ export default function App() {
               <circle cx="25" cy="9" r="2.6" fill="#34d399" />
             </svg>
           </div>
-          <span className="text-lg font-semibold tracking-tight text-ink-50">Trendweight</span>
+          <span className="text-lg font-semibold tracking-tight text-ink-50">Supercomp</span>
         </button>
 
         <div className="flex items-center gap-2">

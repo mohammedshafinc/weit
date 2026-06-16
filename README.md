@@ -1,4 +1,4 @@
-# Trendweight — Weight Tracker
+# Supercomp — AI Weight Tracker
 
 A private, offline-first weight tracking app. You onboard with your height and
 current weight, set a goal, then log weigh-ins on any day. The app reveals the

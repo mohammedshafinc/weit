@@ -19,7 +19,7 @@ export default function Footer() {
             </svg>
           </div>
           <div>
-            <div className="text-sm font-semibold text-ink-200">Trendweight</div>
+            <div className="text-sm font-semibold text-ink-200">Supercomp</div>
             <div className="text-xs text-ink-600">
               Private &amp; offline · your data stays in this browser
             </div>

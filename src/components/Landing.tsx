@@ -64,7 +64,7 @@ function Nav({ onEnterApp }: { onEnterApp: () => void }) {
           <TrendIcon size={18} />
         </div>
         <span className="text-base font-bold tracking-tight text-white">
-          Trendweight
+          Supercomp
         </span>
       </div>
       <nav className="hidden items-center gap-7 text-sm text-ink-400 sm:flex">
@@ -104,7 +104,7 @@ function Hero({ onEnterApp }: { onEnterApp: () => void }) {
       </h1>
 
       <p className="mx-auto mt-6 max-w-xl text-lg text-ink-400 leading-relaxed">
-        Daily weight is noisy. Trendweight's AI-native analytics engine cuts
+        Daily weight is noisy. Supercomp's AI-native analytics engine cuts
         through water-weight fluctuations and reveals your true fat-loss or
         gain trajectory — not the random number on the scale this morning.
       </p>
@@ -398,7 +398,7 @@ function AISection() {
               </span>
             </h2>
             <p className="mt-5 text-ink-400 leading-relaxed">
-              Trendweight is AI-powered at its core — four battle-tested
+              Supercomp is AI-powered at its core — four battle-tested
               statistical models run entirely on your device, with zero latency,
               zero cloud, and zero privacy trade-off.
             </p>
@@ -416,7 +416,7 @@ function AISection() {
                 },
                 {
                   title: 'AI Calorie Model — Mifflin-St Jeor',
-                  body: 'The most validated BMR equation in clinical literature powers Trendweight\'s AI calorie engine. Combined with your activity level it gives a personalised TDEE accurate to ±10% for most adults.',
+                  body: 'The most validated BMR equation in clinical literature powers Supercomp\'s AI calorie engine. Combined with your activity level it gives a personalised TDEE accurate to ±10% for most adults.',
                   label: 'MSJ',
                 },
                 {
@@ -521,9 +521,9 @@ function Comparison() {
           <thead>
             <tr className="border-b border-white/10">
               <th className="pb-3 pr-6 text-left font-medium text-ink-500">Feature</th>
-              {['Trendweight','MyFitnessPal','Libra / HappyScale'].map((h) => (
-                <th key={h} className={cx('pb-3 px-4 text-center font-semibold', h === 'Trendweight' ? 'text-brand-300' : 'text-ink-400')}>
-                  {h === 'Trendweight' ? <span className="inline-flex items-center gap-1.5"><TrendIcon size={14} />{h}</span> : h}
+              {['Supercomp','MyFitnessPal','Libra / HappyScale'].map((h) => (
+                <th key={h} className={cx('pb-3 px-4 text-center font-semibold', h === 'Supercomp' ? 'text-brand-300' : 'text-ink-400')}>
+                  {h === 'Supercomp' ? <span className="inline-flex items-center gap-1.5"><TrendIcon size={14} />{h}</span> : h}
                 </th>
               ))}
             </tr>
@@ -551,11 +551,11 @@ function Comparison() {
 
 /* ── FAQ ─────────────────────────────────────────────────────────────── */
 const FAQ_ITEMS = [
-  { q: 'Is Trendweight really free?', a: 'Yes. Trendweight is an AI-native client-side app — every AI model runs in your browser, so there is no server to pay for. Your data never leaves your device. Free forever.' },
+  { q: 'Is Supercomp really free?', a: 'Yes. Supercomp is an AI-native client-side app — every AI model runs in your browser, so there is no server to pay for. Your data never leaves your device. Free forever.' },
   { q: 'Where is my data stored?', a: 'Everything is stored in your browser\'s localStorage. The AI analytics engine reads it locally — no data is ever sent to a server. Export a JSON backup from Settings to keep a copy.' },
   { q: 'What is the AI trend line?', a: 'An AI-powered Exponentially Weighted Moving Average (EWMA). Each day the AI trend nudges toward your actual weight with a smoothing factor of 0.1 — filtering noise while responding to real fat changes within days.' },
   { q: 'How accurate is the AI goal projection?', a: 'The AI uses ordinary least-squares regression over your last 28 trend points to estimate your current rate, then extrapolates to your goal. The more data the AI has, the more accurate the projection — log daily for best results.' },
-  { q: 'Can I use it on my phone?', a: 'Yes. Trendweight is an AI-powered Progressive Web App. Open it in Chrome or Safari, tap "Add to Home Screen", and it installs like a native app. The AI runs fully offline via a service worker.' },
+  { q: 'Can I use it on my phone?', a: 'Yes. Supercomp is an AI-powered Progressive Web App. Open it in Chrome or Safari, tap "Add to Home Screen", and it installs like a native app. The AI runs fully offline via a service worker.' },
   { q: 'Can I switch between kg and lb?', a: 'Yes, at any time in Settings. All weights are stored internally in kg so the AI models always work in a canonical unit — switching back and forth never degrades data or projections.' },
   { q: 'How do I back up my data?', a: 'Settings → Your data → Export JSON backup. Import it on any device to restore your full AI analytics history. CSV export is also available for spreadsheets.' },
   { q: 'Does it track calories or food?', a: 'Not directly. Trendweight\'s AI focuses on weight trend analysis. The AI calorie engine estimates your TDEE so you know your calorie target, but food logging lives in a separate app.' },

@@ -1,4 +1,21 @@
 import { useState, type ReactNode } from 'react'
+import {
+  Activity,
+  Award,
+  BellRing,
+  Calculator,
+  ChartLine,
+  ChartNoAxesCombined,
+  Globe,
+  NotebookPen,
+  Scale,
+  Shield,
+  Target,
+  TrendingDown,
+  User,
+  WifiOff,
+  Zap,
+} from 'lucide-react'
 import { cx } from './ui'
 
 const LINKEDIN = 'https://www.linkedin.com/in/mohammedshafin'
@@ -25,7 +42,7 @@ export default function Landing({ onEnterApp }: LandingProps) {
   )
 }
 
-/* ── Subtle grain overlay ───────────────────────────────────────────── */
+/* ── Subtle grain overlay ──────────────────────────────────────────── */
 function Noise() {
   return (
     <div
@@ -60,7 +77,7 @@ function Nav({ onEnterApp }: { onEnterApp: () => void }) {
         onClick={onEnterApp}
         className="rounded-xl bg-brand-500 px-4 py-2 text-sm font-semibold text-ink-950 transition-colors hover:bg-brand-400"
       >
-        Open app →
+        Open AI app →
       </button>
     </header>
   )
@@ -76,20 +93,20 @@ function Hero({ onEnterApp }: { onEnterApp: () => void }) {
 
       <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-500/10 px-3.5 py-1 text-xs font-medium text-brand-300">
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-400" />
-        Private · Offline · Free forever
+        AI-Native · Private · Offline · Free forever
       </span>
 
       <h1 className="mx-auto mt-4 max-w-3xl text-5xl font-black leading-[1.07] tracking-tight text-white sm:text-6xl lg:text-7xl">
-        Stop guessing.<br />
+        AI-powered weight tracking.<br />
         <span className="bg-gradient-to-r from-brand-300 via-emerald-300 to-cyan-400 bg-clip-text text-transparent">
           See the real trend.
         </span>
       </h1>
 
       <p className="mx-auto mt-6 max-w-xl text-lg text-ink-400 leading-relaxed">
-        Daily weight is noisy. Trendweight uses an AI-backed smoothing algorithm
-        to show you the true direction of your body weight — not the random
-        number on the scale this morning.
+        Daily weight is noisy. Trendweight's AI-native analytics engine cuts
+        through water-weight fluctuations and reveals your true fat-loss or
+        gain trajectory — not the random number on the scale this morning.
       </p>
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -179,9 +196,9 @@ function MockDashboard() {
 /* ── Scrolling logo strip ───────────────────────────────────────────── */
 function LogoStrip() {
   const badges = [
-    'EWMA Trend', 'BMI Tracking', 'Goal Projection', 'Offline PWA',
-    'Calorie Estimates', 'Streak Tracking', 'Body Fat %', 'CSV Export',
-    'Daily Reminders', 'Achievements', 'No Account Needed', 'Dark UI',
+    'AI-Native Analytics', 'AI-Powered Trend', 'AI Goal Projection', 'Offline PWA',
+    'AI Calorie Engine', 'Streak Tracking', 'Body Fat %', 'CSV Export',
+    'Daily Reminders', 'Achievements', 'No Account Needed', 'AI-Driven Insights',
   ]
   return (
     <div className="relative z-10 overflow-hidden border-y border-white/5 bg-ink-950/70 py-3 backdrop-blur">
@@ -203,44 +220,44 @@ function HowItWorks() {
     {
       n: '01',
       title: 'Set up your profile',
-      body: 'Enter your height, current weight, and goal. Pick metric or imperial. Takes under 60 seconds.',
-      icon: '👤',
+      body: 'Enter your height, current weight, and goal. The AI engine personalises calorie targets and projections from day one. Takes under 60 seconds.',
+      icon: <User className="w-8 h-8 text-brand-400" strokeWidth={1.5} />,
     },
     {
       n: '02',
       title: 'Log your weight each day',
-      body: 'Step on the scale, open the app, type the number. Add body-fat %, notes, or backfill missed days any time.',
-      icon: '⚖️',
+      body: 'Step on the scale, open the app, type the number. Add optional body-fat %, notes, or backfill any missed day — the AI adapts to gaps.',
+      icon: <Scale className="w-8 h-8 text-brand-400" strokeWidth={1.5} />,
     },
     {
       n: '03',
-      title: 'The algorithm finds your trend',
-      body: 'Trendweight applies an exponential moving average to eliminate daily noise and reveal the true direction of your weight.',
-      icon: '📈',
+      title: 'AI finds your true trend',
+      body: 'The AI-powered EWMA engine eliminates daily noise — water weight, food, time of day — to surface the real underlying direction of your body weight.',
+      icon: <TrendingDown className="w-8 h-8 text-brand-400" strokeWidth={1.5} />,
     },
     {
       n: '04',
-      title: 'Analytics guide your decisions',
-      body: 'See your weekly rate, projected goal date, BMI, calorie targets, and streaks — updated in real time as you log.',
-      icon: '🎯',
+      title: 'AI analytics guide decisions',
+      body: 'AI-driven weekly rate, projected goal date, BMI score, personalised calorie targets, and streak data — all recalculated in real time as you log.',
+      icon: <Target className="w-8 h-8 text-brand-400" strokeWidth={1.5} />,
     },
   ]
   return (
     <section id="how" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
       <SectionLabel>Process</SectionLabel>
       <h2 className="mt-3 max-w-xl text-4xl font-black tracking-tight text-white sm:text-5xl">
-        Four steps.<br />Complete clarity.
+        Four steps.<br />AI clarity, instantly.
       </h2>
       <p className="mt-4 max-w-lg text-ink-400">
-        No complicated setup. Just a clean loop that takes seconds a day and
-        gives you a full picture of your progress.
+        No complicated setup. A clean AI-powered loop that takes seconds a day
+        and gives you a full analytical picture of your progress.
       </p>
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s) => (
           <div key={s.n}
             className="group relative overflow-hidden rounded-2xl border border-white/7 bg-ink-900/50 p-6 transition-all hover:border-brand-400/30 hover:bg-ink-900/80">
             <div className="absolute right-4 top-4 text-5xl font-black text-white/3 select-none">{s.n}</div>
-            <div className="mb-4 text-3xl">{s.icon}</div>
+            <div className="mb-4">{s.icon}</div>
             <h3 className="text-base font-bold text-white">{s.title}</h3>
             <p className="mt-2 text-sm text-ink-400 leading-relaxed">{s.body}</p>
           </div>
@@ -251,84 +268,84 @@ function HowItWorks() {
 }
 
 /* ── Features grid ──────────────────────────────────────────────────── */
-const FEATURES = [
+const FEATURES: Array<{icon: ReactNode; title: string; body: string; tag: string}> = [
   {
-    icon: '〰️',
-    title: 'EWMA Trend Line',
-    body: 'An exponentially weighted moving average cuts through water-weight and food noise to show your real direction.',
-    tag: 'Core',
+    icon: <ChartLine className="w-6 h-6 text-purple-300" strokeWidth={1.5} />,
+    title: 'AI-Powered Trend Line',
+    body: 'An AI-native exponentially weighted moving average cuts through water-weight and food noise to surface your real weight direction.',
+    tag: 'AI-Core',
   },
   {
-    icon: '🎯',
-    title: 'Goal Projection',
-    body: 'Linear regression over your last 28 entries projects exactly when you\'ll hit your target at the current pace.',
+    icon: <Target className="w-6 h-6 text-violet-300" strokeWidth={1.5} />,
+    title: 'AI Goal Projection',
+    body: 'AI-driven linear regression over your last 28 entries projects exactly when you\'ll hit your target at the current pace — recalculated every log.',
     tag: 'AI',
   },
   {
-    icon: '🧮',
+    icon: <Calculator className="w-6 h-6 text-amber-300" strokeWidth={1.5} />,
     title: 'BMI & Healthy Range',
-    body: 'Calculates your BMI from trend weight, shows your category on a color scale, and your healthy weight range.',
+    body: 'AI calculates your live BMI from your smoothed trend weight, shows your category on a colour scale, and your personalised healthy range.',
     tag: 'Analytics',
   },
   {
-    icon: '🔥',
-    title: 'Calorie Estimates',
-    body: 'Mifflin-St Jeor BMR and TDEE estimates using your age, sex, weight, height, and activity level.',
+    icon: <Activity className="w-6 h-6 text-violet-300" strokeWidth={1.5} />,
+    title: 'AI Calorie Engine',
+    body: 'AI-powered Mifflin-St Jeor TDEE model uses your age, sex, live weight, height, and activity level for personalised daily calorie targets.',
     tag: 'AI',
   },
   {
-    icon: '⚡',
+    icon: <Zap className="w-6 h-6 text-brand-300" strokeWidth={1.5} />,
     title: 'Consistency Streaks',
-    body: 'Current and longest logging streaks, total weigh-ins, and min/max range — consistency is the engine.',
+    body: 'Current and longest logging streaks, total weigh-ins, and min/max range — AI-driven insights only improve with daily consistency.',
     tag: 'Motivation',
   },
   {
-    icon: '🏆',
-    title: 'Achievements',
-    body: 'Unlock milestones for streaks, weight lost/gained, and goal completion. Progress bars on everything locked.',
+    icon: <Award className="w-6 h-6 text-brand-300" strokeWidth={1.5} />,
+    title: 'Smart Achievements',
+    body: 'AI-aware milestones for streaks, weight lost/gained, and goal completion. Progress bars on locked ones so you always know what\'s next.',
     tag: 'Motivation',
   },
   {
-    icon: '📴',
+    icon: <WifiOff className="w-6 h-6 text-emerald-300" strokeWidth={1.5} />,
     title: 'Offline-first PWA',
-    body: 'Install to your home screen like a native app. Works with zero internet. A service worker caches everything.',
+    body: 'AI analytics run entirely in your browser — no cloud, no internet needed. Install to your home screen like a native app via service worker.',
     tag: 'Privacy',
   },
   {
-    icon: '🔔',
-    title: 'Daily Reminders',
-    body: 'Optional browser notifications at a time you pick — only fires if you haven\'t logged that day.',
+    icon: <BellRing className="w-6 h-6 text-rose-300" strokeWidth={1.5} />,
+    title: 'AI-Timed Reminders',
+    body: 'Smart daily notifications fire only if you haven\'t logged that day — so the AI always has fresh data to work with.',
     tag: 'UX',
   },
   {
-    icon: '🛡️',
-    title: 'Fully Private',
-    body: 'All data lives in your browser\'s localStorage. No account, no server, no telemetry. Export JSON or CSV anytime.',
+    icon: <Shield className="w-6 h-6 text-emerald-300" strokeWidth={1.5} />,
+    title: 'Fully Private AI',
+    body: 'All AI computations run locally in your browser. No account, no server, no telemetry. Your raw data never leaves your device.',
     tag: 'Privacy',
   },
   {
-    icon: '📊',
-    title: 'Interactive Chart',
-    body: 'Time-range selector (1M / 3M / 6M / 1Y / All), raw dots vs. trend line, goal reference line, and rich tooltips.',
-    tag: 'Core',
+    icon: <ChartNoAxesCombined className="w-6 h-6 text-purple-300" strokeWidth={1.5} />,
+    title: 'AI Interactive Chart',
+    body: 'AI-rendered trend overlaid on raw data with 1M/3M/6M/1Y/All ranges, a goal reference line, and AI-computed tooltips on every point.',
+    tag: 'AI-Core',
   },
   {
-    icon: '📝',
+    icon: <NotebookPen className="w-6 h-6 text-purple-300" strokeWidth={1.5} />,
     title: 'Body-fat & Notes',
-    body: 'Log an optional body-fat percentage and free-text note with any weigh-in. Edit or delete any past entry.',
-    tag: 'Core',
+    body: 'Log an optional body-fat percentage and free-text note. The AI factors body-fat trends separately from total weight movement.',
+    tag: 'AI-Core',
   },
   {
-    icon: '🌍',
+    icon: <Globe className="w-6 h-6 text-rose-300" strokeWidth={1.5} />,
     title: 'Metric & Imperial',
-    body: 'Switch between kg/cm and lb/ft-in at any time. All data is stored canonically in kg so nothing is lost.',
+    body: 'Switch units any time — all AI models store data canonically in kg so conversions are lossless and projections stay accurate.',
     tag: 'UX',
   },
 ]
 
 const TAG_COLORS: Record<string, string> = {
-  Core: 'bg-sky-500/12 text-sky-300',
-  AI: 'bg-purple-500/12 text-purple-300',
+  'AI-Core': 'bg-purple-500/12 text-purple-300',
+  AI: 'bg-violet-500/12 text-violet-300',
   Analytics: 'bg-amber-500/12 text-amber-300',
   Motivation: 'bg-brand-500/12 text-brand-300',
   Privacy: 'bg-emerald-500/12 text-emerald-300',
@@ -339,17 +356,19 @@ function Features() {
   return (
     <section id="features" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
       <div className="pointer-events-none absolute right-0 top-12 h-96 w-96 rounded-full bg-purple-500/6 blur-3xl" />
-      <SectionLabel>Features</SectionLabel>
+      <SectionLabel>AI Features</SectionLabel>
       <h2 className="mt-3 max-w-lg text-4xl font-black tracking-tight text-white sm:text-5xl">
-        Everything you need.<br />
-        <span className="text-ink-400">Nothing you don't.</span>
+        AI-native from the ground up.<br />
+        <span className="text-ink-400">Nothing bolted on.</span>
       </h2>
       <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {FEATURES.map((f) => (
           <div key={f.title}
             className="group rounded-2xl border border-white/6 bg-ink-900/40 p-5 transition-all hover:border-white/12 hover:bg-ink-900/70">
             <div className="flex items-start justify-between gap-3">
-              <span className="text-2xl">{f.icon}</span>
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5">
+                {f.icon}
+              </div>
               <span className={cx('rounded-full px-2 py-0.5 text-[11px] font-medium', TAG_COLORS[f.tag] ?? 'bg-white/5 text-ink-400')}>
                 {f.tag}
               </span>
@@ -371,38 +390,38 @@ function AISection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <SectionLabel>AI Analytics</SectionLabel>
+            <SectionLabel>AI Analytics Engine</SectionLabel>
             <h2 className="mt-3 text-4xl font-black tracking-tight text-white sm:text-5xl">
-              Not AI hype.<br />
+              AI-native analytics.<br />
               <span className="bg-gradient-to-r from-brand-300 to-cyan-400 bg-clip-text text-transparent">
-                Proven science.
+                Runs at the edge.
               </span>
             </h2>
             <p className="mt-5 text-ink-400 leading-relaxed">
-              The same statistical techniques used by clinical weight-loss
-              research — implemented locally in your browser, running instantly,
-              requiring zero internet.
+              Trendweight is AI-powered at its core — four battle-tested
+              statistical models run entirely on your device, with zero latency,
+              zero cloud, and zero privacy trade-off.
             </p>
             <div className="mt-8 space-y-4">
               {[
                 {
-                  title: 'Exponential Moving Average',
-                  body: 'Alpha-weighted smoothing (α = 0.1) matches your scale\'s measurement noise profile. Each day, the trend nudges toward your actual weight — responding to real changes while ignoring daily fluctuations from water, food, and time of day.',
+                  title: 'AI Trend Smoothing — EWMA',
+                  body: 'The AI-native alpha-weighted smoother (α = 0.1) models your scale\'s noise profile. Each day the AI trend nudges toward your actual weight — responding to real fat changes while filtering out water, food, and time-of-day artefacts.',
                   label: 'EWMA',
                 },
                 {
-                  title: 'Linear Regression Rate',
-                  body: 'Ordinary least-squares regression over your last 28 trend points gives a statistically robust kg/week rate. Short enough to reflect current behaviour, long enough to ignore single outliers.',
+                  title: 'AI Rate Engine — OLS Regression',
+                  body: 'AI-powered ordinary least-squares regression over your last 28 trend points delivers a statistically robust kg/week rate. Short enough to reflect current behaviour, long enough to reject single-day outliers.',
                   label: 'OLS',
                 },
                 {
-                  title: 'Mifflin-St Jeor TDEE',
-                  body: 'The most validated BMR equation in clinical literature. Combined with your reported activity level for a daily energy expenditure estimate accurate to ±10% for most adults.',
+                  title: 'AI Calorie Model — Mifflin-St Jeor',
+                  body: 'The most validated BMR equation in clinical literature powers Trendweight\'s AI calorie engine. Combined with your activity level it gives a personalised TDEE accurate to ±10% for most adults.',
                   label: 'MSJ',
                 },
                 {
-                  title: 'Goal Date Projection',
-                  body: 'The OLS rate is extrapolated linearly to your goal weight, gated on directionality — it only projects when you\'re actually moving toward the goal, never misleadingly against it.',
+                  title: 'AI Goal Date Projection',
+                  body: 'The AI projection engine extrapolates your OLS rate to your goal weight, gated on directionality — it only projects when you\'re actually moving toward the goal, never misleadingly against it.',
                   label: 'PROJ',
                 },
               ].map((item) => (
@@ -443,7 +462,7 @@ function AlgoVisual() {
 
   return (
     <div className="rounded-2xl border border-white/8 bg-ink-950/70 p-6 shadow-2xl">
-      <div className="mb-1 text-xs font-medium text-ink-500 uppercase tracking-wide">Live algorithm output</div>
+      <div className="mb-1 text-xs font-medium text-ink-500 uppercase tracking-wide">AI engine · live output</div>
       <svg viewBox={`0 0 ${W} ${H + 8}`} className="w-full mt-3">
         <defs>
           <linearGradient id="ai-fill" x1="0" y1="0" x2="0" y2="1">
@@ -476,26 +495,26 @@ function AlgoVisual() {
 /* ── Comparison table ───────────────────────────────────────────────── */
 function Comparison() {
   const rows = [
-    ['Trend smoothing (EWMA)',    true,  false, false],
-    ['Goal date projection',      true,  false, true ],
-    ['TDEE / BMR estimates',      true,  true,  false],
-    ['Offline / no internet',     true,  false, false],
-    ['No account required',       true,  false, false],
-    ['Fully private (local data)',true,  false, false],
-    ['Installable PWA',           true,  false, false],
-    ['Daily reminders',           true,  true,  true ],
-    ['Body-fat tracking',         true,  true,  true ],
-    ['Achievements / streaks',    true,  false, true ],
-    ['CSV & JSON export',         true,  true,  false],
-    ['Free forever',              true,  false, false],
+    ['AI-powered trend smoothing (EWMA)', true,  false, false],
+    ['AI goal date projection',           true,  false, true ],
+    ['AI calorie engine (TDEE/BMR)',      true,  true,  false],
+    ['Offline / no internet needed',      true,  false, false],
+    ['No account required',               true,  false, false],
+    ['Fully private (AI runs locally)',   true,  false, false],
+    ['Installable AI PWA',               true,  false, false],
+    ['AI-timed daily reminders',         true,  true,  true ],
+    ['Body-fat tracking',                true,  true,  true ],
+    ['Smart achievements / streaks',     true,  false, true ],
+    ['CSV & JSON export',                true,  true,  false],
+    ['Free forever',                     true,  false, false],
   ]
 
   return (
     <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
       <SectionLabel>Comparison</SectionLabel>
       <h2 className="mt-3 max-w-lg text-4xl font-black tracking-tight text-white sm:text-5xl">
-        Why Trendweight<br />
-        <span className="text-ink-400">over everything else?</span>
+        The only AI-native<br />
+        <span className="text-ink-400">weight tracker that's free.</span>
       </h2>
       <div className="mt-12 overflow-x-auto">
         <table className="w-full min-w-[540px] border-collapse text-sm">
@@ -532,14 +551,14 @@ function Comparison() {
 
 /* ── FAQ ─────────────────────────────────────────────────────────────── */
 const FAQ_ITEMS = [
-  { q: 'Is Trendweight really free?', a: 'Yes. It is a client-side web app — there is no server to pay for. Your data never leaves your device, so there is nothing to monetise. Free forever.' },
-  { q: 'Where is my data stored?', a: 'Everything is stored in your browser\'s localStorage under the key "weight-tracker.state.v1". Clearing your browser data will remove it. Export a JSON backup from Settings to keep a copy.' },
-  { q: 'What is the EWMA trend line?', a: 'Exponentially Weighted Moving Average. Each day\'s trend is nudged toward your actual weight with a factor of 0.1. This smooths out water-weight, food weight, and time-of-day noise while responding to real fat changes within a few days.' },
-  { q: 'How accurate is the goal date projection?', a: 'It is a statistical estimate, not a guarantee. It uses ordinary least-squares regression over your last 28 trend points to estimate your current rate and extrapolates linearly. The more entries you have, the more accurate it becomes.' },
-  { q: 'Can I use it on my phone?', a: 'Yes. It is a Progressive Web App. Open it in Chrome or Safari, tap "Add to Home Screen", and it installs like a native app. It works fully offline thanks to a service worker.' },
-  { q: 'Can I switch between kg and lb?', a: 'Yes, at any time in Settings. All weights are stored internally in kg so the conversion is lossless — switching back and forth never degrades your data.' },
-  { q: 'How do I back up my data?', a: 'Go to Settings → Your data → Export JSON backup. Import it back the same way on any device. You can also export CSV for use in spreadsheets.' },
-  { q: 'Does it track calories or food?', a: 'Not directly — Trendweight focuses on weight trend analysis. It does estimate your BMR and TDEE so you know roughly how many calories to target, but you would log food in a separate app.' },
+  { q: 'Is Trendweight really free?', a: 'Yes. Trendweight is an AI-native client-side app — every AI model runs in your browser, so there is no server to pay for. Your data never leaves your device. Free forever.' },
+  { q: 'Where is my data stored?', a: 'Everything is stored in your browser\'s localStorage. The AI analytics engine reads it locally — no data is ever sent to a server. Export a JSON backup from Settings to keep a copy.' },
+  { q: 'What is the AI trend line?', a: 'An AI-powered Exponentially Weighted Moving Average (EWMA). Each day the AI trend nudges toward your actual weight with a smoothing factor of 0.1 — filtering noise while responding to real fat changes within days.' },
+  { q: 'How accurate is the AI goal projection?', a: 'The AI uses ordinary least-squares regression over your last 28 trend points to estimate your current rate, then extrapolates to your goal. The more data the AI has, the more accurate the projection — log daily for best results.' },
+  { q: 'Can I use it on my phone?', a: 'Yes. Trendweight is an AI-powered Progressive Web App. Open it in Chrome or Safari, tap "Add to Home Screen", and it installs like a native app. The AI runs fully offline via a service worker.' },
+  { q: 'Can I switch between kg and lb?', a: 'Yes, at any time in Settings. All weights are stored internally in kg so the AI models always work in a canonical unit — switching back and forth never degrades data or projections.' },
+  { q: 'How do I back up my data?', a: 'Settings → Your data → Export JSON backup. Import it on any device to restore your full AI analytics history. CSV export is also available for spreadsheets.' },
+  { q: 'Does it track calories or food?', a: 'Not directly. Trendweight\'s AI focuses on weight trend analysis. The AI calorie engine estimates your TDEE so you know your calorie target, but food logging lives in a separate app.' },
 ]
 
 function FAQ() {
@@ -587,20 +606,20 @@ function CTA({ onEnterApp }: { onEnterApp: () => void }) {
         <div className="pointer-events-none absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl" />
         <div className="relative">
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl">
-            Stop stepping off the scale<br />feeling confused.
+            AI-powered clarity.<br />Zero confusion.
           </h2>
           <p className="mx-auto mt-5 max-w-md text-ink-400">
-            One tap to set up. Seconds a day to log. A lifetime of clarity about
-            your body weight.
+            One tap to set up. Seconds a day to log. A lifetime of AI-driven
+            insights about your body weight — private, offline, free.
           </p>
           <button
             onClick={onEnterApp}
             className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-ink-950 shadow-lg shadow-brand-500/30 transition-all hover:bg-brand-400 hover:shadow-brand-400/40"
           >
-            Start tracking — it's free
+            Try the AI tracker — it's free
             <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </button>
-          <div className="mt-4 text-xs text-ink-600">No account · No cloud · Your data stays with you</div>
+          <div className="mt-4 text-xs text-ink-600">AI-native · No account · No cloud · Runs locally</div>
         </div>
       </div>
     </section>
@@ -620,7 +639,7 @@ function LandingFooter() {
             </div>
             <div>
               <div className="text-sm font-bold text-ink-100">Trendweight</div>
-              <div className="text-xs text-ink-600">Private weight tracker</div>
+              <div className="text-xs text-ink-600">AI-native private weight tracker</div>
             </div>
           </div>
 
